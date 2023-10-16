@@ -15,7 +15,10 @@
 1. Affichez dans la console le résultat de toutes les combinaisons possibles de true ET false
 2. Avant de lancer votre navigateur et d'ouvrir la console, notez ici pour chaque ligne le résultat attendu dans un commentaire
 */
-
+console.log(true && true); /* true */
+console.log(true && false); /* false */
+console.log(false && true); /* false */
+console.log(false && false); /* false */
 
 
 // Une condition qui utilise l'opérateur logique ET
@@ -24,7 +27,13 @@
 1. Demandez à l'utilisateur d'entrer un nombre et stockez-le dans une variable nombre
 2. Testez si le nombre est dans l'intervalle [0, 100]. Autrement dit, testez si 0 <= nombre <= 100. Si c'est le cas, affichez "… est compris entre 0 et 100".
 */
-
+let nbrUtilisateur = prompt('Veuillez insérer un nombre');
+if (nbrUtilisateur >= 0 && nbrUtilisateur <= 100) {
+    console.log(`${nbrUtilisateur} est compris entre 0 et 100`);
+} else {
+    console.log('' +
+        `${nbrUtilisateur} n'est pas compris entre 0 et 100`);
+}
 
 
 // 2°) L'opérateur logique OU
@@ -33,6 +42,10 @@
 1. Affichez dans la console le résultat de toutes les combinaisons possibles de true OU false
 2. Avant de lancer votre navigateur et d'ouvrir la console, notez ici pour chauqe ligne le résultat attendu dans un commentaire
 */
+console.log(true || true); /* true */
+console.log(true || false); /* true */
+console.log(false || true); /* true */
+console.log(false || false); /* false */
 
 
 
@@ -42,7 +55,12 @@
 1. Demandez à l'utilisateur d'entrer un nombre et stockez-le dans une variable nombre
 2. Testez si le nombre en dehors de l'intervalle [0, 100]. Si c'est le cas, affichez "… est en dehors de l'intervalle [0, 100]".
 */
-
+let nbrUtilisateur2 = prompt('Veuillez insérer un nombre');
+if (nbrUtilisateur2 < 0 || nbrUtilisateur2 > 100) {
+    console.log(`${nbrUtilisateur2} est en dehors de l'intervalle [0, 100 ]`);
+} else {
+    console.log(`${nbrUtilisateur2} est dans l'intervalle [0, 100 ]`);
+}
 
 
 // 3°) L'opérateur logique NOT
@@ -57,7 +75,12 @@
 1. Demandez à l'utilisateur d'entrer un nombre et stockez-le dans une variable nombre
 2. Si ce nombre n'est pas supérieur à 100, affichez "… est inférieur ou égal à 100".
 */
-
+let nbrUtilisateur3 = prompt('Veuillez insérer un nombre');
+if (!(nbrUtilisateur3 > 100)) {
+    console.log(`${nbrUtilisateur3} n'est pas supérieur à 100`);
+} else {
+    console.log(`${nbrUtilisateur3} est supérieur à 100`);
+}
 
 // 15-2. - LES ALTERNATIVES MULTIPLES
 
@@ -69,8 +92,16 @@
   1°) s'il est négatif, affichez "… est négatif", 
   2°) sinon, affichez "… est nul"
 */
-
-
+let nbrUtilisateur4 = prompt('Veuillez insérer un nombre');
+if (nbrUtilisateur4 > 0) {
+    console.log(`${nbrUtilisateur4} est positif`);
+} else {
+    if (nbrUtilisateur4 < 0) {
+        console.log(`${nbrUtilisateur4} est négatif`);
+    } else {
+        console.log(`${nbrUtilisateur4} est nul`);
+    }
+}
 
 // 2°) Autre écriture pour le même test : le if / elseif / else
 
@@ -79,6 +110,15 @@ BUT : réaliser le même test que l'exercice précédent mais avec l'écriture i
 1. Demandez à l'utilisateur d'entrer un nombre et stockez-le dans une variable nombre
 2. Affichez "… est positif", "… est négatif" ou "… est nul" selon le cas
 */
+let nbrUtilisateur5 = prompt('Veuillez insérer un nombre');
+if (nbrUtilisateur5 > 0) {
+    console.log(`${nbrUtilisateur4} est positif`);
+} else if (nbrUtilisateur5 < 0) {
+    console.log(`${nbrUtilisateur4} est négatif`);
+} else {
+    console.log(`${nbrUtilisateur4} est nul`);
+
+}
 
 
 
@@ -92,6 +132,18 @@ b) si elle a entre 13 et 20 ans, affichez "… est un adolescent."
 c) si elle a entre 20 et 30 ans, affichez "… est un jeune homme."
 d) sinon, affichez "… est un homme."
 */
+let firstName = prompt('Quel est votre prénom ?');
+let age = prompt('Quel est votre âge ?');
+
+if (age < 13) {
+    console.log(`${firstName} est un petit garçon`);
+} else if (age >= 13 && age <= 20) {
+    console.log(`${firstName} est un adolescent`);
+} else if (age >= 21 && age < 31) {
+    console.log(`${firstName} est un jeune homme`);
+} else {
+    console.log(`${firstName} est un homme`);
+}
 
 
 
@@ -109,5 +161,18 @@ d) s'il neige, affichez "Restez au chaud à la maison."
 e) dans tous les autres cas (si la personne n'a rien répondu de tout ça —
   c.-à-d. qu'elle n'a entré aucun de ces qautre mots-là), affichez "Je n'ai pas compris !"
 */
+let meteo = prompt('Quel temps fait-il dehors ? Répondez par un des quatre mots suivants :\n' +
+    '  soleil, vent, pluie ou neige.');
+if ( meteo === 'soleil' || meteo === 'Soleil') {
+    console.log('Sortez en t-shirt');
+} else if ( meteo === 'vent' || meteo === 'Vent') {
+    console.log('Sortez en pull');
+} else if (meteo === 'pluie' || meteo === 'Pluie') {
+    console.log('Sortez en blouson');
+} else if (meteo === 'neige' || meteo === 'Neige') {
+    console.log('Restez au chaud à la maison');
+} else {
+    console.log('Je n\'ai pas compris !')
+}
 
 
