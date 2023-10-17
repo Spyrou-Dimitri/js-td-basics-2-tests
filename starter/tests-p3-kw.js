@@ -7,6 +7,57 @@ Les 31 à 50èmes KW sont à 20 centimes le KW
 Les 51 à 70èmes KW sont à 15 centimes le KW
 Les KW suivants sont à 10 centimes le KW
 */
+/*const kwIntroduit = prompt('Combien de Kw avez vous consommer ?');
+kwConsomme = parseInt(kwIntroduit);
+let costOver70;
+let costUnder30;
+let between31and50;
+let costBetween31and50;
+let between51and70;
+let costBetween51and70;
+let over70;
+
+switch (kwConsomme){
+    case kwConsomme <= 30:
+        costUnder30 = kwConsomme * 25;
+        console.log(`Le prix en centime sera de ${costUnder30}`);
+    case kwConsomme >= 31 && kwConsomme <= 50:
+        between31and50 = kwConsomme % 30;
+        costBetween31and50 = (between31and50 * 20) + costUnder30;
+        console.log(`Le prix en centime sera de ${costBetween31and50}`);
+    case kwConsomme >= 51 && kwConsomme <= 70:
+        between51and70 = kwConsomme % 50;
+        costBetween51and70 = (between51and70 * 15) + costUnder30 + costBetween31and50;
+        console.log(`Le prix en centime sera de ${costBetween51and70}`);
+    case kwConsomme > 70:
+        over70 = kwConsomme % 70;
+        costOver70 = (over70 % 70) + costUnder30 + costBetween31and50 + costBetween51and70;
+        console.log(`Le prix en centime sera de ${costOver70}`);
+        break;
+
+} */
+
+const ristourne1 = 0.25;
+const ristourne2 = 0.20;
+const ristourne3 = 0.15;
+const ristourne4 = 0.10;
+let cout;
+
+let kwConso = prompt('Quel est le nombre de kw consomme ?');
+if (kwConso <=30){
+    cout = kwConso * ristourne1;
+    console.log(`Vous allez payer ${cout} centime`);
+    } else if (kwConso >= 31 && kwConso <= 50) {
+    cout = 30 * ristourne1 + (kwConso - 30) *ristourne2;
+    console.log(`Vous allez payer ${cout} centime`);
+    } else if (kwConso >= 51 && kwConso <= 70) {
+    cout = 30 * ristourne1 + 20 * ristourne2 + (kwConso - 50) * ristourne3;
+    console.log(`Vous allez payer ${cout} centime`);
+    } else if (kwConso > 70) {
+    cout = 30 * ristourne1 + 20 * ristourne2 + 20 * ristourne3 + (kwConso - 70) * ristourne4;
+    console.log(`Vous allez payer ${cout} centime`);
+}
+
 
 /*
 Valeurs de test :

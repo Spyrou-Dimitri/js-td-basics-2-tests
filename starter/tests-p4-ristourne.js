@@ -7,7 +7,20 @@ Attention, les ristournes ne sont pas cumulables.
 Ecrire un programme JS qui affiche le montant de la réduction accordée
 sur base de la situation de l’acheteur et du montant de ses achats.
 */
+const prixArticles = prompt('Quel est le prix de vos achats');
+const nbrEnfants = prompt('Combien de mômes avez vous ?');
+let ristourne;
+if (prixArticles > 125) {
+    ristourne = prixArticles * 0.1;
+    console.log(`La ristourne sera de ${ristourne}`);
+} else if (prixArticles > 50 && nbrEnfants >= 3) {
+    ristourne = prixArticles * 0.1;
+    console.log(`La ristourne sera de ${ristourne}`);
+} else {
+    ristourne = prixArticles * 0.05;
+    console.log(`La ristourne sera de ${ristourne}`);
 
+}
 /* Valeurs de test :
 - achat de 50 euros et moins de 3 enfants : 5% = 2.5€
 - achat de 50 euros et 3 enfants : 5% = 2.5€

@@ -15,3 +15,25 @@ calcule et affiche la somme versée aux restos du cœur.
 - 200€ (remise de 20€, 2€ versés)
 - 1000€ (remise de 100€, 2€ versés)
 */
+
+const prix = prompt('Quel est le prix ?');
+let remise;
+let don;
+
+if (prix > 25) {
+    remise = prix * 0.1;
+    console.log(`La remise est de ${remise}`);
+    if (remise > 5) {
+        don = (remise * 0.1)
+        if (don > 2) {
+            don = 2;
+            console.log(`Le don pour les resto du coeur est de ${don}`);
+        } else {
+            console.log(`Le don pour les resto du coeur est de ${don}`);
+        }
+    } else {
+        console.log('Il n\'y aura pas de don');
+    }
+} else {
+    console.log('Il n\'y aura pas de remise');
+}

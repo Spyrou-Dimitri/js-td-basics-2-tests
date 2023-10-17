@@ -13,6 +13,12 @@
 3. Testez si la variable height est définie et affichez "La variable height est définie" ou "La variable height n'est PAS définie" selon le cas
 4. Testez différents cas de figure en changeant la valeur de height (par exemple 0, ou NaN) ou en ne lui affectant pas de valeur… ATTENTION, votre script doit bien dire que "La variable height est définie" dans le cas où on a donné à height une valeur de 0…
 */
+let height = NaN;
+if (height === false) {
+    console.log('La variable height est indéfinie');
+} else {
+    console.log('La variable est définie');
+}
 
 
 
