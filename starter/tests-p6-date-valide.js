@@ -3,6 +3,7 @@ TESTS - PRÉPA 6 : Date valide
 Ecrire un programme JS qui teste si une date entrée par l’utilisateur est une date valide ou pas
 */
 
+
 /*
 AIDE (en français) : 
 Pour qu’une date soit valide, il faut que la date du jour ne dépasse pas
@@ -26,4 +27,55 @@ Par exemple,
  - Il ne reste plus ensuite qu'à comparer le jour entré par l'utilisateur avec maxJour pour retourner true ou fasle
   selon que la date est valide ou pas.
   */
-  
+const jour = parseInt(prompt("Entrez le jour : "));
+const mois = parseInt(prompt("Entrez le mois : "));
+const annee = parseInt(prompt("Entrez l'année : "));
+
+let isvalide = true;
+
+if (annee < 0) {
+    isvalide = false;
+}
+
+
+if (mois > 12 || mois < 0) {
+    isvalide = false
+}
+
+if (jour < 0 || jour > 31) {
+    isvalide = false;
+}
+
+switch (mois) {
+    case 2:
+        if ((annee % 4 == 0 && annee % 100 != 0) || (annee % 400 == 0)) {
+            if (jour > 29) {
+                isvalide = false;
+            } else if (jour > 28) {
+                isvalide = false;
+            }
+        }
+        break;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        if (jour > 30) {
+            isvalide = false;
+        }
+        break;
+}
+
+do {
+    const jour = parseInt(prompt("Entrez le jour : "));
+    const mois = parseInt(prompt("Entrez le mois : "));
+    const annee = parseInt(prompt("Entrez l'année : "));
+}while (isvalide === false)
+
+let result = "Le ";
+result += jour;
+
+
+result += " " + annee;
+result += " est une date valide";
+console.log(result);
